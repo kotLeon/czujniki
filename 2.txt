@@ -1,0 +1,19 @@
+int lampka = 13;                                           
+int zm = 0;                    
+ 
+void setup() {
+  pinMode(13, OUTPUT);      
+  pinMode(4, INPUT);     
+ 
+  Serial.begin(9600);
+}
+ 
+void loop(){
+  zm = digitalRead(4); 
+  if (zm == HIGH) {            
+    digitalWrite(lampka, HIGH);  
+    Serial.println("Ruch!");
+  } else {
+    digitalWrite(lampka, LOW); 
+  }
+}
